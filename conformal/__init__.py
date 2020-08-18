@@ -24,8 +24,8 @@ class ConformalPrediction:
         """
         if type(model_output).__module__ != np.__name__:
             raise TypeError('model_output must be numpy array')
-        if type(actual).__module__ != np.__name__ and type(actual).__module__ != 'list':
-            raise TypeError('actual must be a list')
+        #if type(actual).__module__ != np.__name__ and type(actual).__module__ != 'list':
+        #    raise TypeError('actual must be a list')
         if epsilon < 0 or epsilon > 100:
             raise ValueError('epsilon should be between 0 and 100 ,both inclusive')
         if type(threshold_mode).__name__ != 'int':
@@ -49,10 +49,10 @@ class ConformalPrediction:
         :param actual_labels: ground truth label
         :return: accuracy
         """
-        if type(predicted_labels).__module__ != np.__name__ and type(predicted_labels).__name__ != 'list':
-            raise TypeError('predicted_labels must be 2D-numpy array or 2D-list ')
-        if type(actual_labels).__module__ != np.__name__ and type(predicted_labels).__name__ != 'list':
-            raise TypeError('actual_labels must be a list')
+        #if type(predicted_labels).__module__ != np.__name__ and type(predicted_labels).__name__ != 'list':
+        #    raise TypeError('predicted_labels must be 2D-numpy array or 2D-list ')
+        #if type(actual_labels).__module__ != np.__name__ and type(predicted_labels).__name__ != 'list':
+        #    raise TypeError('actual_labels must be a list')
 
         count = 0
         for i, labels in enumerate(predicted_labels):
