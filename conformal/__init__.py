@@ -130,7 +130,7 @@ class ConformalPrediction:
         plt.xticks(y_pos, range(0,bins+1))
         autolabel(rects)
         plt.grid(True)
-        plt.ylim((0, 10000))
+        plt.ylim((0, 5500000))
         plt.title(title)
         plt.ylabel('# of predictions')
         plt.xlabel('# bins')
