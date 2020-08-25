@@ -112,7 +112,7 @@ class ConformalPrediction:
         return predictions
     
     def confidence(self, model_output):
-        if type(model_output).__module__ != np.__name:
+        if type(model_output).__module__ != np.__name__:
             raise TypeError('model_output must be 2D-numpy array')
         model_output = model_output.copy()
         confidences = []
