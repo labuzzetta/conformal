@@ -117,7 +117,7 @@ class ConformalPrediction:
         model_output = model_output.copy()
         confidences = []
         for output in model_output:
-            confidences.append([i for i in range(len(output)) self.measure.measure(output, i)])
+            confidences.append([i for i in range(len(output)) return self.measure.measure(output, i)])
         return confidences
 
     @staticmethod
