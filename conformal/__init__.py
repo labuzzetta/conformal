@@ -110,6 +110,15 @@ class ConformalPrediction:
         for output in model_output:
             predictions.append([i for i in range(len(output)) if self.measure.measure(output, i) <= self.thresholds[i]])
         return predictions
+    
+    def confidence(self, model_output):
+        if type(model_output).__module__ != np.__name:
+            raise TypeError('model_output must be 2D-numpy array')
+        model_output = model_output.copy()
+        confidences = []
+        for output in model_output:
+            confidences.append([i for i in range(len(output)) self.measure.measure(output, i)])
+        return confidences
 
     @staticmethod
     def __save_histogram_plot(labels_count,bins, plots_path, append_title):
