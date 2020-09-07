@@ -124,6 +124,7 @@ class ConformalPrediction:
         measure = {label: [] for label in range(model_output.shape[1])}
         for i, output in enumerate(model_output):
             measure[np.where(actual[i] == 1)[0][0]].append(self.measure.measure(output, np.where(actual[i] == 1)[0][0]))
+        return measure
 
     @staticmethod
     def __save_histogram_plot(labels_count,bins, plots_path, append_title):
